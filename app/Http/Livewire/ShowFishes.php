@@ -16,4 +16,15 @@ class ShowFishes extends Component
             'fishes' => $fishes
         ]);
     }
+
+    public function create()
+    {
+        Fish::create([
+            'content' => $this->content,
+            'user_id' => 1,
+        ]);
+
+        $this->content = '';
+
+    }
 }

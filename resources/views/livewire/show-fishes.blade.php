@@ -3,7 +3,10 @@
 
     <h1> {{ $content }}</h1>
 
-    <input type="text" name="content" id="content" wire:model="content">
+    <form action="" method="post" wire:submit.prevent="create">
+        <input type="text" name="content" id="content" wire:model="content">
+        <button type="submit">Criando Registro</button>
+    </form>
 
     <hr>
 
