@@ -5,7 +5,7 @@ use App\Http\Livewire\{
     ShowFishes
 };
 
-Route::get('fishes', ShowFishes::class);
+Route::get('fishes', ShowFishes::class)->middleware('auth');
 
 Route::get('/', function () {
     return view('welcome');

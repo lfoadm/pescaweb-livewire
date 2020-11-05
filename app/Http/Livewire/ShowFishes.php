@@ -17,7 +17,7 @@ class ShowFishes extends Component
     ];
     public function render()
     {
-        $fishes = Fish::with('user')->paginate(2);
+        $fishes = Fish::with('user')->latest()->paginate(8);
         return view('livewire.show-fishes', [
             'fishes' => $fishes
         ]);
@@ -27,10 +27,15 @@ class ShowFishes extends Component
     {
         $this->validate();
 
-        Fish::create([
+        /* Fish::create([
             'content' => $this->content,
             'user_id' => 1,
+        ]); */
+
+        auth()->user()->fishes()->create([
+            'content' => $this->content,
         ]);
+
 
         $this->content = '';
 

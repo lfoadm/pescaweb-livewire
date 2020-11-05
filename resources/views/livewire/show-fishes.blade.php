@@ -8,7 +8,7 @@
         @error('content')
             {{ $message }}
         @enderror
-        <button type="submit">Criando Registro</button>
+        <button class="btn btn-success" type="submit">Criando Registro</button>
     </form>
 
     <hr>
