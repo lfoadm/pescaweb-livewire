@@ -5,6 +5,9 @@
 
     <form action="" method="post" wire:submit.prevent="create">
         <input type="text" name="content" id="content" wire:model="content">
+        @error('content')
+            {{ $message }}
+        @enderror
         <button type="submit">Criando Registro</button>
     </form>
 
@@ -13,4 +16,8 @@
     @foreach ($fishes as $fish)
         {{ $fish->user->name }} ------ {{ $fish->content }} <br>
     @endforeach
+
+    <div>
+        {{ $fishes->links() }}
+    </div>
 </div>
